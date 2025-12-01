@@ -20,12 +20,12 @@ const Form = () => {
     const password = watch("Password")
 
     const onSubmit = (data) => {
-        alert(  "Name is " + data.Name +"\n"
-                +"Email is " + data.Email + "\n"
-                + "Password is " + data.Password + "\n"
-                + "Registration Successful"
-            )
-            
+        alert("Registration Successful")
+        console.log(
+            "Name is " + data.Name +"\n"
+            +"Email is " + data.Email + "\n"
+            + "Password is " + data.Password + "\n"
+        )
         // To clear the inputs fileds after form submission
         reset()
     }
