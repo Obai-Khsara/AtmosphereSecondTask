@@ -40,7 +40,7 @@ const Form = () => {
             <label className='block mt-2 text-white text-2xl'>Name</label>
             <input
                 {...register("Name", { required: "Name is required"},)}
-                className= {`w-full border mt-1 rounded-lg pl-4 py-0.5 outline-0 border-${errors.Name? 'red-500':'blue-700'}`}
+                className= {`w-full border mt-1 rounded-lg pl-4 py-0.5 outline-0 ${errors.Name? 'border-red-500':'border-blue-700'}`}
                 type="text" placeholder='Enter Your Full Name' />
             {errors.Name && <span className='text-red-500'>{errors.Name.message}</span>}
 
@@ -48,7 +48,7 @@ const Form = () => {
             <input
                 {...register("Email",{required: {value: true, message: "Email address is required"},
                     pattern: {value: regEmail, message: "Email should be in valid format"}})}
-                className={`w-full border border-${errors.Email? 'red-500':'blue-700'} mt-1 rounded-lg pl-4 py-0.5 outline-0`}
+                className={`w-full border ${errors.Email? 'border-red-500':'border-blue-700'} mt-1 rounded-lg pl-4 py-0.5 outline-0`}
                 type="email" placeholder='Enter Your Email'/>
             {errors.Email && <span className='text-red-500'>{errors.Email.message}</span>}    
 
@@ -58,7 +58,7 @@ const Form = () => {
                     { required: {value: true, message: "Password  is required"},
                     minLength: {value: 8 , message: "Password must be at least 8 characters"},
                     pattern: {value: passwordRegex, message: "Password must contain at least one lowercase letter, one uppercase letter, one number and one special character"}})}
-                className={`w-full border border-${errors.Password? 'red-500':'blue-700'} mt-1 rounded-lg pl-4 py-0.5 outline-0`}
+                className={`w-full border ${errors.Password? 'border-red-500':'border-blue-700'} mt-1 rounded-lg pl-4 py-0.5 outline-0`}
                 type="password" placeholder='Enter Your Password' />
             {errors.Password && <span className='text-red-500'>{errors.Password.message}</span>}
 
@@ -68,7 +68,7 @@ const Form = () => {
                     required: {value: true, message: "Confirm password is required"},
                     validate: (value) => value === password || "Confirm password does not match password"
                 })}
-                className={`w-full border border-${errors.Confirmpassword? 'red-500':'blue-700'} mt-1 rounded-lg pl-4 py-0.5 outline-0`}
+                className={`w-full border ${errors.Confirmpassword? 'border-red-500':'border-blue-700'} mt-1 rounded-lg pl-4 py-0.5 outline-0`}
                 type="password" placeholder='Confirm Your Password' />
             {errors.Confirmpassword && <span className='text-red-500'>{errors.Confirmpassword.message}</span>}
 
